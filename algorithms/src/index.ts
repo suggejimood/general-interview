@@ -3,6 +3,7 @@ import {
   firstUniqueChar,
   validAnagram,
   validPalindrome,
+  validParentheses,
 } from "./array/index";
 
 function main() {
@@ -12,6 +13,7 @@ function main() {
   firstUniqueChar();
   validAnagram();
   validPalindrome();
+  validParentheses();
 
   console.log("--- The End ---");
 }
