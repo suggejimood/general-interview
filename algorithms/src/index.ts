@@ -1,5 +1,5 @@
 import { arrayTwoSum, validAnagram, validPalindrome } from "./array/index";
-import { firstUniqueChar } from "./hash-map";
+import { firstUniqueChar, topK } from "./hash-map";
 import { longestSubstringWithoutRepeatingCharacters } from "./sliding-window-two-pointers";
 import { mergeInterval } from "./sorting-binary-search-greedy";
 import { validParentheses } from "./stack-queue";
@@ -14,6 +14,7 @@ function main() {
   validParentheses();
   longestSubstringWithoutRepeatingCharacters();
   mergeInterval();
+  topK();
 
   console.log("--- The End ---");
 }
