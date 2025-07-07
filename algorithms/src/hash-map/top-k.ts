@@ -1,5 +1,6 @@
 import { performance } from "perf_hooks";
 
+//BigO -> O(n logn)
 function ans1(nums: number[], k: number): void {
   const startTime = performance.now();
 

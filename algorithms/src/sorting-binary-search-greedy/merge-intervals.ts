@@ -1,5 +1,6 @@
 import { performance } from "perf_hooks";
 
+//BigO -> O(n logn)
 function ans1(intervals: number[][]): void {
   const startTime = performance.now();
 
@@ -24,7 +25,6 @@ function ans1(intervals: number[][]): void {
     }
   }
 
-  // Son kalan aralığı da ekle
   result.push(current);
 
   const endTime = performance.now();
