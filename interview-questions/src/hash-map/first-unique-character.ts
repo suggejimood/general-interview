@@ -1,29 +1,20 @@
 import { performance } from "perf_hooks";
 
 // BigO -> O(n)
-function ans1(text: string): void {
-  const startTime = performance.now();
-
-  let ans: number = -1;
+function ans1(text: string): number {
   const map = new Map<string, number>();
 
-  for (let ch of text) {
+  for (const ch of text) {
     map.set(ch, (map.get(ch) || 0) + 1);
   }
 
-  for (let i = 0; i < text.length; i++) {
+  for (let i: number = 0; i < text.length; i++) {
     if (map.get(text[i]) === 1) {
-      ans = i;
-      break;
+      return i;
     }
   }
 
-  const endTime = performance.now();
-
-  console.log(
-    "Answer is: " + ans + ` character is ${text[ans] ?? "can not found"}`
-  );
-  console.log(`Performance Time ${endTime - startTime} ms`);
+  return -1;
 }
 
 function ans2(text: string): void {
@@ -45,6 +36,11 @@ function ans2(text: string): void {
 
 export function firstUniqueChar() {
   console.log("-First unique char");
-  ans1("mehmet tan");
+  const startTime = performance.now();
+  const result = ans1("mehmet tan");
+  const endTime = performance.now();
+  console.log("Answer is: " + result);
+  console.log(`Performance Time ${endTime - startTime} ms`);
+
   ans2("mehmet tan");
 }
