@@ -1,38 +1,27 @@
 import { performance } from "perf_hooks";
 
-function ans(text: string): void {
-  const startTime = performance.now();
-  let ans: boolean = true;
-
+function ans1(text: string): boolean {
   const stack: string[] = [];
-  const map = new Map([
-    [")", "("],
-    ["}", "{"],
-    ["]", "["],
-  ]);
+  const map: Record<string, string> = { ")": "(", "}": "{", "]": "[" };
 
-  for (let ch of text) {
-    if (map.has(ch)) {
-      const top = stack.pop();
-      if (top !== map.get(ch)) {
-        ans = false;
-      }
-    } else {
+  for (const ch of text) {
+    if (ch === "(" || ch === "{" || ch === "{") {
       stack.push(ch);
+    } else {
+      if (stack.pop() !== map[ch]) {
+        return false;
+      }
     }
   }
 
-  if (stack.length !== 0) {
-    ans = false;
-  }
-
-  const endTime = performance.now();
-  console.log("Answer: " + ans);
-  console.log(`Performance Time ${endTime - startTime} ms`);
+  return stack.length === 0;
 }
 
 export function validParentheses(): void {
   console.log("-Valid Parentheses");
-  ans("()[]{}");
-  ans("([)]");
+  const startTime = performance.now();
+  const answer = ans1("()[]{}");
+  const endTime = performance.now();
+  console.log("Answer: " + answer);
+  console.log(`Performance Time ${endTime - startTime} ms`);
 }
