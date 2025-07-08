@@ -23,7 +23,6 @@ function ans2(nums: number[], target: number): void {
   const startTime = performance.now();
   let ans: number[] = [];
   const map = new Map<number, number>();
-  console.log(map);
 
   for (let i: number = 0; i < nums.length; i++) {
     const current = nums[i];

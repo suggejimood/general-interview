@@ -8,7 +8,7 @@ import {
 import { validParentheses } from "./stack-queue";
 
 function main() {
-  console.log("--- Now Start ---");
+  console.log("--- Now Start ---\n");
 
   arrayTwoSum();
   firstUniqueChar();
@@ -21,7 +21,7 @@ function main() {
   kth();
   searchInsertPosition();
 
-  console.log("--- The End ---");
+  console.log("\n--- The End ---");
 }
 
 main();
