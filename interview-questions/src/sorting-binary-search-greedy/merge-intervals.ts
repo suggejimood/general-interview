@@ -23,6 +23,8 @@ function ans1(nums: number[][]): number[][] {
     }
   }
 
+  result.push(current);
+
   return result;
 }
 
