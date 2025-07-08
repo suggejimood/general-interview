@@ -1,7 +1,10 @@
 import { arrayTwoSum, validAnagram, validPalindrome } from "./array/index";
 import { firstUniqueChar, kth, topK } from "./hash-map";
 import { longestSubstringWithoutRepeatingCharacters } from "./sliding-window-two-pointers";
-import { mergeInterval } from "./sorting-binary-search-greedy";
+import {
+  mergeInterval,
+  searchInsertPosition,
+} from "./sorting-binary-search-greedy";
 import { validParentheses } from "./stack-queue";
 
 function main() {
@@ -16,6 +19,7 @@ function main() {
   mergeInterval();
   topK();
   kth();
+  searchInsertPosition();
 
   console.log("--- The End ---");
 }
