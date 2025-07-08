@@ -1,5 +1,5 @@
 import { arrayTwoSum, validAnagram, validPalindrome } from "./array/index";
-import { firstUniqueChar, kth, topK } from "./hash-map";
+import { firstUniqueChar, groupAnagrams, kth, topK } from "./hash-map";
 import { longestSubstringWithoutRepeatingCharacters } from "./sliding-window-two-pointers";
 import {
   mergeInterval,
@@ -20,6 +20,7 @@ function main() {
   topK();
   kth();
   searchInsertPosition();
+  groupAnagrams();
 
   console.log("\n--- The End ---");
 }
