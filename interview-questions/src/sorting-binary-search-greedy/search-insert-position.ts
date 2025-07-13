@@ -1,18 +1,17 @@
 import { performance } from "perf_hooks";
 
 //BigO -> O(n logn)
-function ans1(nums: number[], target: number): void {
-  const startTime = performance.now();
-
+function ans1(nums: number[], target: number): number {
   let left = 0;
   let right = nums.length - 1;
+
+  nums = nums.sort((a, b) => a - b);
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
 
     if (nums[mid] === target) {
-      left = mid; //return
-      break;
+      return mid;
     } else if (nums[mid] < target) {
       left = mid + 1;
     } else {
@@ -20,12 +19,13 @@ function ans1(nums: number[], target: number): void {
     }
   }
 
-  const endTime = performance.now();
-  console.log("Answer: " + left);
-  console.log(`Performance Time ${endTime - startTime} ms`);
+  return left;
 }
 
 export function searchInsertPosition(): void {
-  ans1([1, 3, 5, 6], 5);
-  ans1([1, 3, 5, 6], 2);
+  const startTime = performance.now();
+  const result = ans1([1, 3, 5, 6], 5);
+  const endTime = performance.now();
+  console.log("Answer: " + result);
+  console.log(`Performance Time ${endTime - startTime} ms`);
 }
